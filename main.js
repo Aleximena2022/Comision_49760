@@ -19,33 +19,44 @@ function division(a, b) {
     }
 }
 
-// Aqui se encuentra el Algoritmo condicional
-let a = Number(prompt("Ingresar un número"));
-let operacion = prompt("Operación Matemática");
-let b = Number(prompt("Ingresar un número"));
 
-switch (operacion) {
-    case '+':
-        console.log(suma(a, b));
-        break;
-    case '-':
-        console.log(resta(a, b));
-        break;
-    case '*':
-        console.log(multiplicacion(a, b));
-        break;
-    case '/':
-        console.log(division(a, b));
-        break;
-    default:
-        console.log("Operación incorrecta");
-}
+let a = Number(prompt("Ingresar el primer número"));
+let b = Number(prompt("Ingresar el segundo número"));
 
-// Aqui esta el Algoritmo que genera un un ciclo
-let numero = Number(prompt("Ingresar un número"));
+do {
+    
+    let operacion = prompt("Operación Matemática (+, -, *, /) o escribir 'cancelar' para finalizar");
 
-while (numero !== 0) {
-    console.log(numero);
-    numero = Number(prompt("Ingresar otro número"));
-}
+    
+    if (operacion.toLowerCase() === 'cancelar') {
+        break; // Salir del bucle si el usuario escribe 'cancelar'
+    }
+
+    // Realizar la operación correspondiente
+    switch (operacion) {
+        case '+':
+            console.log(suma(a, b));
+            break;
+        case '-':
+            console.log(resta(a, b));
+            break;
+        case '*':
+            console.log(multiplicacion(a, b));
+            break;
+        case '/':
+            console.log(division(a, b));
+            break;
+        default:
+            console.log("Operación incorrecta");
+    }
+
+    let continuar = prompt("¿Quieres realizar otra operación? (sí/no)").toLowerCase();
+    if (continuar !== 'sí' && continuar !== 'si') {
+        break; // Salir del bucle si la respuesta no es 'sí' o 'si'
+    }
+
+    b = Number(prompt("Ingresar otro número"));
+
+} while (true);
+
 console.log("Fin De La Operacion");
