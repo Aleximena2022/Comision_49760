@@ -19,7 +19,7 @@ function division(a, b) {
     }
 }
 
-// Algoritmo condicional
+// Aqui se encuentra el Algoritmo condicional
 let a = Number(prompt("Ingresar un número"));
 let operacion = prompt("Operación Matemática");
 let b = Number(prompt("Ingresar un número"));
@@ -41,7 +41,7 @@ switch (operacion) {
         console.log("Operación incorrecta");
 }
 
-// Algoritmo generando un ciclo
+// Aqui esta el Algoritmo que genera un un ciclo
 let numero = Number(prompt("Ingresar un número"));
 
 while (numero !== 0) {
